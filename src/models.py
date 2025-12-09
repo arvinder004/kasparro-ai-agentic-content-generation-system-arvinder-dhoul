@@ -34,9 +34,10 @@ class AgentState(BaseModel):
 # Output
 class PageSection(BaseModel):
     heading: str
-    content: str | List[Dict]
+    content: str | List[Dict] | List[UserQuestion]
 
 class PageOutput(BaseModel):
     page_type: str
+    meta_title: str
+    meta_description: str
     sections: List[PageSection]
-    meta_tags: List[str]
